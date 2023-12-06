@@ -25,6 +25,11 @@ setup() {
 }
 
 setuptimer() {
+    if [ ! -f $AOC_ROOT/.aocsession ]; then
+        echo "No .aocsession file found. Please create one before continuing."
+        return
+    fi
+    
     python $AOC_ROOT/scripts/waitformidnight.py && setup
 }
 
