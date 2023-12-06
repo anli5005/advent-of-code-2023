@@ -18,6 +18,7 @@ setup() {
     cp $AOC_ROOT/template.py $AOC_ROOT/$DAY/$(echo $DAY)a.py
     touch $AOC_ROOT/$DAY/$(echo $DAY)b.py
     touch $AOC_ROOT/$DAY/s.txt
+    code $AOC_ROOT/$DAY/$(echo $DAY)a.py
     open https://adventofcode.com/$YEAR/day/$DAY
     curl https://adventofcode.com/$YEAR/day/$DAY/input --cookie "session=$(cat $AOC_ROOT/.aocsession)" > $AOC_ROOT/$DAY/$(echo $DAY).txt
     truncate -s -1 $AOC_ROOT/$DAY/$(echo $DAY).txt
