@@ -14,9 +14,10 @@ setup() {
     DAY="$(day)"
     YEAR="$(python $AOC_ROOT/scripts/year.py)"
     mkdir $AOC_ROOT/$DAY
-    cp $AOC_ROOT/template.py $AOC_ROOT/$DAY/5a.py
-    touch $AOC_ROOT/$DAY/5b.py
+    cp $AOC_ROOT/template.py $AOC_ROOT/$DAY/$(echo $DAY)a.py
+    touch $AOC_ROOT/$DAY/$(echo $DAY)b.py
     touch $AOC_ROOT/$DAY/s.txt
+    open https://adventofcode.com/$YEAR/day/$DAY
     curl https://adventofcode.com/$YEAR/day/$DAY/input --cookie "session=$(cat $AOC_ROOT/.aocsession)" > $AOC_ROOT/$DAY/$(echo $DAY).txt
     truncate -s -1 $AOC_ROOT/$DAY/$(echo $DAY).txt
 }
