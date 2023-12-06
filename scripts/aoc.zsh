@@ -13,6 +13,7 @@ setup() {
 
     DAY="$(day)"
     YEAR="$(python $AOC_ROOT/scripts/year.py)"
+    echo "Setting up for day $DAY of $YEAR..."
     mkdir $AOC_ROOT/$DAY
     cp $AOC_ROOT/template.py $AOC_ROOT/$DAY/$(echo $DAY)a.py
     touch $AOC_ROOT/$DAY/$(echo $DAY)b.py
@@ -20,6 +21,10 @@ setup() {
     open https://adventofcode.com/$YEAR/day/$DAY
     curl https://adventofcode.com/$YEAR/day/$DAY/input --cookie "session=$(cat $AOC_ROOT/.aocsession)" > $AOC_ROOT/$DAY/$(echo $DAY).txt
     truncate -s -1 $AOC_ROOT/$DAY/$(echo $DAY).txt
+}
+
+setuptimer() {
+    python $AOC_ROOT/scripts/waitformidnight.py && setup
 }
 
 a() {
@@ -44,6 +49,7 @@ bs() {
 
 echo "Advent of Code 2023 environment loaded!"
 echo "setup - create new day and download input"
+echo "setuptimer - create new day and download input at midnight"
 echo "a - run part a"
 echo "as - run part a with sample input"
 echo "b - run part b"
