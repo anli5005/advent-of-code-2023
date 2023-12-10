@@ -15,3 +15,4 @@ Note that most of this code is kinda messy lol
 | Day 4 (Part B) | 46 |
 | Day 7 (Part B) | 99 |
 | Day 8 (Part A) | 72 |
+| Day 10 (Part A) | 9 |
