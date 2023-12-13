@@ -16,3 +16,4 @@ Note that most of this code is kinda messy lol
 | Day 7 (Part B) | 99 |
 | Day 8 (Part A) | 72 |
 | Day 10 (Part A) | 9 |
+| Day 13 (Part A) | 68 |
