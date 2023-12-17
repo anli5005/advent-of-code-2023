@@ -43,3 +43,5 @@ source "$(dirname "$(realpath "$0")")/scripts/aoc.zsh"
 | Day 15 (Part B) | 17 |
 | Day 16 (Part A) | 26 |
 | Day 16 (Part B) | 33 |
+| Day 17 (Part A) | 57 |
+| Day 17 (Part B) | 23 |
