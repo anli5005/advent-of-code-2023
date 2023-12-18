@@ -1,3 +1,9 @@
+# Basically extends the part A solution by mapping
+# points in the 2D array to arbitrary coordinates
+# 
+# In retrospect I should've gone with shoelace instead,
+# solutions in the TPH Discord are much nicer lol
+
 import sys
 import re
 
