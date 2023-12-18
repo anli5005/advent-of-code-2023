@@ -47,13 +47,11 @@ for line in lines:
 print("\n".join("".join("#" if x else "." for x in row[:100]) + f" {i}" for i, row in enumerate(grid[:2])))
 
 start = [(imapr[0] + 2, jmapr[0] + 2)]
-seen = set()
 while len(start) > 0:
     current = start.pop()
-    if current in seen:
-        continue
-    seen.add(current)
     i, j = current
+    if grid[i][j]:
+        continue
     grid[i][j] = True
     for _, v in dirs.items():
         try:

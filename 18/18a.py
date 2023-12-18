@@ -21,13 +21,11 @@ for line in lines:
         grid[i][j] = True
 
 start = [(1, 1)]
-seen = set()
 while len(start) > 0:
     current = start.pop()
-    if current in seen:
-        continue
-    seen.add(current)
     i, j = current
+    if grid[i][j]:
+        continue
     grid[i][j] = True
     for _, v in dirs.items():
         if not grid[i + v[0]][j + v[1]]:
