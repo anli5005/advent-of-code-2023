@@ -19,7 +19,11 @@ setup() {
     touch $AOC_ROOT/$DAY/$(echo $DAY)b.py
     touch $AOC_ROOT/$DAY/s.txt
     code $AOC_ROOT --goto $DAY/$(echo $DAY)a.py
-    open https://adventofcode.com/$YEAR/day/$DAY
+    if type xdg-open > /dev/null; then
+        xdg-open https://adventofcode.com/$YEAR/day/$DAY
+    else
+        open https://adventofcode.com/$YEAR/day/$DAY
+    fi
     curl -A "https://github.com/anli5005/advent-of-code-$YEAR by me@anli.dev" https://adventofcode.com/$YEAR/day/$DAY/input --cookie "session=$(cat $AOC_ROOT/.aocsession)" > $AOC_ROOT/$DAY/$(echo $DAY).txt
     truncate -s -1 $AOC_ROOT/$DAY/$(echo $DAY).txt
 }
